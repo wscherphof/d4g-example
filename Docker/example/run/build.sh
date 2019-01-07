@@ -62,9 +62,9 @@ cat << 'EOF' >> "${here}/conf/${DOCKER_USER}.sh"
 	# export DOCKER_TAG="$POSTFIX_TAG"
 	# "${here}/scripts/postfix/run.sh"
 
-	# export DOCKER_REPO='postgis'
-	# export DOCKER_TAG="$POSTGIS_TAG"
-	# "${here}/scripts/postgis/run.sh" postgres pwd dbname
+	export DOCKER_REPO='postgis'
+	export DOCKER_TAG="$POSTGIS_TAG"
+	"${here}/scripts/postgis/run.sh" postgres theroofisonfire example
 
 	# export DOCKER_REPO='geoserver'
 	# export DOCKER_TAG="$GEOSERVER_TAG"

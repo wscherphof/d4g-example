@@ -79,12 +79,6 @@ elif [ "${action}" == 'build' ]; then
 	# cd "${scripts}/${DOCKER_USER}/postfix"
 	# ./build.sh
 
-	# latest merkator/postgis no_container
-	# cd "${DOCKER_BASE}/postgis"
-	# ./build.sh
-	# cd "${scripts}/${DOCKER_USER}/postgis"
-	# ./build.sh
-
 	# latest merkator/geoserver no_container
 	# cd "${DOCKER_BASE}/geoserver"
 	# ./build.sh
@@ -115,17 +109,23 @@ elif [ "${action}" == 'build' ]; then
 	# cd "${scripts}/${DOCKER_USER}/app"
 	# ./build.sh
 
+	# latest merkator/postgis no_container
+	# cd "${DOCKER_BASE}/postgis"
+	# ./build.sh
+	# cd "${scripts}/${DOCKER_USER}/postgis"
+	# ./build.sh
+
 	# cd "${scripts}/${DOCKER_USER}/run"
 	# PROXY_TAG=latest; POSTFIX_TAG=latest; POSTGIS_TAG=latest; GEOSERVER_TAG=latest; MAPFISH_TAG=latest; CRON_TAG=latest; API_TAG=latest; APP_TAG=latest
 	# ./build.sh "${PROXY_TAG}" "${POSTFIX_TAG}" "${POSTGIS_TAG}" "${GEOSERVER_TAG}" "${MAPFISH_TAG}" "${CRON_TAG}" "${API_TAG}" "${APP_TAG}"
 
 	# latest "${DOCKER_USER}/postfix" "${POSTFIX_CONTAINER}"
-	# latest "${DOCKER_USER}/postgis" "${POSTGIS_CONTAINER}"
 	# latest "${DOCKER_USER}/geoserver" "${GEOSERVER_CONTAINER}"
 	# latest "${DOCKER_USER}/mapfish" "${MAPFISH_CONTAINER}"
 	# latest "${DOCKER_USER}/cron" "${CRON_CONTAINER}"
 	# latest "${DOCKER_USER}/api" "${API_CONTAINER}"
 	latest "${DOCKER_USER}/run" no_container
+	latest "${DOCKER_USER}/postgis" "${POSTGIS_CONTAINER}"
 	latest "${DOCKER_USER}/app" "${APP_CONTAINER}"
 	latest "${DOCKER_USER}/proxy" "${PROXY_CONTAINER}"
 
