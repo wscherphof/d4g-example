@@ -73,12 +73,6 @@ elif [ "${action}" == 'build' ]; then
 	here=$(pwd)
 	cd "${scripts}"; scripts=$(pwd) # make the path absolute
 
-	# latest merkator/proxy no_container
-	# cd "${DOCKER_BASE}/proxy"
-	# ./build.sh
-	# cd "${scripts}/${DOCKER_USER}/proxy"
-	# ./build.sh
-
 	# latest merkator/postfix no_container
 	# cd "${DOCKER_BASE}/postfix"
 	# ./build.sh
@@ -110,6 +104,12 @@ elif [ "${action}" == 'build' ]; then
 	# ./build.sh
 
 	# cd "${scripts}/${DOCKER_USER}/api"
+	# ./build.sh
+
+	# latest merkator/proxy no_container
+	# cd "${DOCKER_BASE}/proxy"
+	# ./build.sh
+	# cd "${scripts}/${DOCKER_USER}/proxy"
 	# ./build.sh
 
 	# cd "${scripts}/${DOCKER_USER}/app"
