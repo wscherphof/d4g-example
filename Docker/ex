@@ -112,8 +112,8 @@ elif [ "${action}" == 'build' ]; then
 	# cd "${scripts}/${DOCKER_USER}/api"
 	# ./build.sh
 
-	cd "${scripts}/${DOCKER_USER}/app"
-	./build.sh
+	# cd "${scripts}/${DOCKER_USER}/app"
+	# ./build.sh
 
 	# cd "${scripts}/${DOCKER_USER}/run"
 	# PROXY_TAG=latest; POSTFIX_TAG=latest; POSTGIS_TAG=latest; GEOSERVER_TAG=latest; MAPFISH_TAG=latest; CRON_TAG=latest; API_TAG=latest; APP_TAG=latest
@@ -124,10 +124,10 @@ elif [ "${action}" == 'build' ]; then
 	# latest "${DOCKER_USER}/geoserver" "${GEOSERVER_CONTAINER}"
 	# latest "${DOCKER_USER}/mapfish" "${MAPFISH_CONTAINER}"
 	# latest "${DOCKER_USER}/cron" "${CRON_CONTAINER}"
-	# latest "${DOCKER_USER}/run" no_container
 	# latest "${DOCKER_USER}/api" "${API_CONTAINER}"
-	# latest "${DOCKER_USER}/app" "${APP_CONTAINER}"
-	# latest "${DOCKER_USER}/proxy" "${PROXY_CONTAINER}"
+	latest "${DOCKER_USER}/run" no_container
+	latest "${DOCKER_USER}/app" "${APP_CONTAINER}"
+	latest "${DOCKER_USER}/proxy" "${PROXY_CONTAINER}"
 
 	cd "${here}"
 	"$0" run
