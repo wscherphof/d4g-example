@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 export DOCKER_USER='example'
 export DOCKER_REPO='postgis'
