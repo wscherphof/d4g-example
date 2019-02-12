@@ -1,1 +1,1 @@
-FROM merkatorgis/proxy
+FROM docker4gis/proxy

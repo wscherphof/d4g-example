@@ -1,1 +1,1 @@
-FROM merkatorgis/postgis
+FROM docker4gis/postgis
