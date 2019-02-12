@@ -7,8 +7,12 @@ pg.sh -c "
     ;
 "
 
-mkdir -p ./1/shp
-unzip ./1/*-shp.zip -d ./1/shp
-shp2pgsql -D -I ./1/shp/*.shp example.firestation > ./1/load.sql
-pg.sh -f ./1/load.sql
-rm -rf ./1/shp
+pushd 1
+mkdir -p shp
+unzip *-shp.zip -d shp
+pushd shp
+shp2pgsql -D -I *.shp "${schema}.firestation" > load.sql
+pg.sh -f load.sql
+popd
+rm -rf shp
+popd
