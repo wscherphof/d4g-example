@@ -6,7 +6,7 @@ export DOCKER_USER='example'
 
 # Fork the merkatorgis/docker4gis repo and set the environment variable
 # to the docker4gis/base directory
-export DOCKER_BASE="${DOCKER_BASE}"
+export DOCKER_BASE=~/Documents/GitHub/docker4gis/base
 echo; echo "DOCKER_BASE: ${DOCKER_BASE}"
 
 # Either empty for Docker Hub
