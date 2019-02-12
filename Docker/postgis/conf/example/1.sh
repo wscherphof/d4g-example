@@ -1,9 +1,11 @@
 #!/bin/bash
 
-pg.sh -c '
-    create schema $(dirname "$0")
+schema=$(basename $(pwd))
+
+pg.sh -c "
+    create schema ${schema}
     ;
-'
+"
 
 mkdir -p ./1/shp
 unzip ./1/*-shp.zip -d ./1/shp
