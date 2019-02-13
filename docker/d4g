@@ -2,7 +2,7 @@
 set -e
 
 # edit here
-export DOCKER_USER='example'
+export DOCKER_USER='wscherphof'
 
 # Fork the merkatorgis/docker4gis repo and set the environment variable
 # to the docker4gis/base directory
@@ -16,12 +16,6 @@ export DOCKER_REGISTRY="${DOCKER_REGISTRY}"
 action="${1:-start}"
 shift 1
 
-export PROXY_HOST='localhost.merkator.com'
-export PROXY_PORT="${PROXY_PORT:-7443}"
-export APP="${APP:-http://${DOCKER_USER}-app:5000/}"
-export API="${API:-http://${DOCKER_USER}-api:8080/}"
-
-# export DOCKER_REGISTRY="${DOCKER_REGISTRY:-docker.merkator.com/}"
 export NETWORK_NAME="${DOCKER_USER}-net"
 export DOCKER_BINDS_DIR="${DOCKER_BASE}/../binds"
 
@@ -33,6 +27,11 @@ export POSTFIX_CONTAINER="${DOCKER_USER}-pf"
 export CRON_CONTAINER="${DOCKER_USER}-cr"
 export APP_CONTAINER="${DOCKER_USER}-app"
 export PROXY_CONTAINER="${DOCKER_USER}-px"
+
+export PROXY_HOST='localhost.merkator.com'
+export PROXY_PORT="${PROXY_PORT:-7443}"
+export APP="${APP}"
+export API="${API}"
 
 export MSYS_NO_PATHCONV=1
 
@@ -101,6 +100,7 @@ elif [ "${action}" == 'tag' ]; then
 	fi
 	tag="${1}"
 	image="${2}"
+	image="${DOCKER_REGISTRY}${DOCKER_USER}/${image}"
 	docker image tag "${image}:latest" "${image}:${tag}"
 	if [ "${push}" == '-push' ]; then
 		docker image push "${image}:latest"

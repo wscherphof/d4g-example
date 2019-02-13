@@ -56,7 +56,7 @@ cat << 'EOF' >> "${here}/conf/${DOCKER_USER}.sh"
 	here=$(dirname "$0")
 
 	export DOCKER_TAG="$POSTGIS_TAG"
-	"${here}/scripts/postgis/run.sh" postgres th3r1s0nf example
+	"${here}/scripts/postgis/run.sh" postgres th3r1s0nf d4g
 
 	# export DOCKER_TAG="$API_TAG"
 	# "${here}/scripts/api/run.sh" 9090 5858
