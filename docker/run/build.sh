@@ -38,6 +38,7 @@ cp "${DOCKER_BASE}/network.sh"       "${here}/conf/scripts"
 
 cat << EOF > "${here}/conf/${DOCKER_USER}.sh"
 	#!/bin/bash
+	set -x
 	POSTGIS_TAG="${POSTGIS_TAG}"
 	API_TAG="${API_TAG}"
 	GEOSERVER_TAG="${GEOSERVER_TAG}"
@@ -82,4 +83,4 @@ EOF
 
 docker build -t $IMAGE .
 
-rm -rf "${here}/conf/scripts" "${here}/conf/${DOCKER_USER}.sh"
+rm -rf "${here}/conf/"
