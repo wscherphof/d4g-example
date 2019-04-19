@@ -2,11 +2,11 @@
 set -e
 
 # edit here
-export DOCKER_USER='wscherphof'
+export DOCKER_USER=wscherphof
 
 # Fork the merkatorgis/docker4gis repo and set the environment variable
 # to the docker4gis/base directory
-export DOCKER_BASE=~/github.com/wscherphof/docker4gis/base
+export DOCKER_BASE=~/Documents/GitHub/docker4gis/base
 
 # Either empty for Docker Hub
 # or eg docker.merkator.com/ (including the trailing slash)
