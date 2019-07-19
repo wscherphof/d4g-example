@@ -1,0 +1,89 @@
+
+di 16 jul 2019 15:29:14
+
+About to run wscherphof version: latest
+
+With these settings:
+
+DOCKER_ENV=DEVELOPMENT
+
+PROXY_HOST=localhost.merkator.com
+
+DOCKER_BINDS_DIR=D:\github.com\wscherphof\docker4gis\base/../binds
+DOCKER_REGISTRY=
+POSTGIS_PORT=5432
+POSTFIX_PORT=25
+PROXY_PORT=7443
+APP=
+API=
+HOMEDEST=/app
+
+
+Executing wscherphof/package:latest
+wscherphof-net
+
+Starting wscherphof-postgis...
+wscherphof-postgis
+98b847800e53729d54d37ddb73ffd0557010729df0db0902f61a1a7efb2599d0
+
+Starting wscherphof-geoserver...
+wscherphof-geoserver
+2a9c70ef03f9f065e7f4bcab55d88b37bfa5e8a3b42a7899106e2e3c774635c0
+
+Starting wscherphof-app...
+5e78f5322ce86c6651fd68c42366278dac07645f6dc33d49118373b6befbb6cf
+
+Starting wscherphof-proxy...
+4aea4f3269359e4b677ebe976dd89c8dbb1d5c83c3237e07ce154bfa0e96d907
+
+CONTAINER ID        IMAGE                         COMMAND                  CREATED             STATUS                  PORTS                             NAMES
+4aea4f326935        wscherphof/proxy:latest       "/entrypoint proxy"      1 second ago        Up Less than a second   8080/tcp, 0.0.0.0:7443->443/tcp   wscherphof-proxy
+5e78f5322ce8        wscherphof/app:latest         "serve --listen 80 /…"   5 seconds ago       Up 4 seconds                                              wscherphof-app
+2a9c70ef03f9        wscherphof/geoserver:latest   "/entrypoint geoserv…"   7 seconds ago       Up 6 seconds            0.0.0.0:58080->8080/tcp           wscherphof-geoserver
+98b847800e53        wscherphof/postgis:latest     "/entrypoint postgis"    14 seconds ago      Up 13 seconds           0.0.0.0:5432->5432/tcp            wscherphof-postgis
+
+di 16 jul 2019 15:37:55
+
+About to run wscherphof version: 0
+
+With these settings:
+
+DOCKER_ENV=DEVELOPMENT
+
+PROXY_HOST=localhost.merkator.com
+
+DOCKER_BINDS_DIR=D:\github.com\wscherphof\docker4gis\base/../binds
+DOCKER_REGISTRY=
+POSTGIS_PORT=5432
+POSTFIX_PORT=25
+PROXY_PORT=7443
+APP=
+API=
+HOMEDEST=/app
+
+
+Executing wscherphof/package:0
+
+Starting wscherphof-postgis...
+wscherphof-postgis
+wscherphof-postgis
+af5b473a73a02b3533264d61dd84f86e548fb9a6632405eef852cebf5c0e999a
+
+Starting wscherphof-geoserver...
+wscherphof-geoserver
+wscherphof-geoserver
+24aa4e85675bd7e6e6d9b35f140095641d7f368b59f49783cc3426d9a07c0953
+
+Starting wscherphof-app...
+wscherphof-app
+44a9083d93c45b87f9cc15fb3b5a04d7b507c16e56d342340f2cae49ef5d8c72
+
+Starting wscherphof-proxy...
+wscherphof-proxy
+ea04cd2969acfad1fe88c86ee672c1fb6a1ce45871f719e7d2b4989437ed62c4
+
+CONTAINER ID        IMAGE                    COMMAND                  CREATED             STATUS                  PORTS                             NAMES
+ea04cd2969ac        wscherphof/proxy:0       "/entrypoint proxy"      1 second ago        Up Less than a second   8080/tcp, 0.0.0.0:7443->443/tcp   wscherphof-proxy
+44a9083d93c4        wscherphof/app:0         "serve --listen 80 /…"   7 seconds ago       Up 5 seconds                                              wscherphof-app
+24aa4e85675b        wscherphof/geoserver:0   "/entrypoint geoserv…"   9 seconds ago       Up 8 seconds            0.0.0.0:58080->8080/tcp           wscherphof-geoserver
+af5b473a73a0        wscherphof/postgis:0     "/entrypoint postgis"    13 seconds ago      Up 12 seconds           0.0.0.0:5432->5432/tcp            wscherphof-postgis
